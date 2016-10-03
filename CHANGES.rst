@@ -4,7 +4,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use base.cfg instead of buildout.cfg to ease deployment
+  [laulaz]
 
 
 1.0 (2016-09-30)
