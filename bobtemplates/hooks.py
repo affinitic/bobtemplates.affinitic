@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from datetime import date
 import os
 import shutil
 
@@ -23,6 +24,7 @@ def prepare_render(configurator):
     This is especially important for allowing nested and normal packages.
     """
     # get package-name and package-type from user-input
+    configurator.variables['year'] = date.today().year
     package_dir = os.path.basename(configurator.target_directory)
     nested = bool(len(package_dir.split('.')) == 3)
     configurator.variables['package.nested'] = nested
