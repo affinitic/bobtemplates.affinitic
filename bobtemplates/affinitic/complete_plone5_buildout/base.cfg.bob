@@ -1,47 +1,13 @@
 [buildout]
-extensions =
-    mr.developer
-
-show-picked-versions = true
-auto-checkout =
-
-parts =
-    instance
-    upgrade
-    omelette
-
 extends =
-    https://dist.plone.org/release/5-latest/versions.cfg
+    https://github.com/affinitic/affinitic.dist/blob/plone5/plone5-base.cfg
     sources.cfg
     versions.cfg
     variables.cfg
+    settings.cfg
 
-index = http://devpi.imio.be/root/imio/+simple/
-versions = versions
+egg +=
+    {settings:package_policy}
 
-[instance]
-recipe = plone.recipe.zope2instance
-user = admin:admin
-environment-vars =
-  zope_i18n_compile_mo_files true
-  TZ Europe/Brussels
-eggs =
-    Plone
-    ${variables:package_policy}
-
-[omelette]
-recipe = collective.recipe.omelette
-eggs = ${instance:eggs}
-
-[upgrade]
-recipe = zc.recipe.egg
-eggs = ${instance:eggs}
-scripts = upgrade-portals
-arguments = args=[
-    '--zope-conf', '${instance:location}/etc/zope.conf',
-    '--log-file', '${buildout:directory}/var/log/upgrade.log']
-
-[debug-products]
-eggs =
-    ipdb
-    Products.PDBDebugMode
+zcml =
+    {settings:package_policy}

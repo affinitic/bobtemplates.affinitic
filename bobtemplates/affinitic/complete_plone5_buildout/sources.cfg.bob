@@ -1,12 +1,11 @@
 [remotes]
-imio = git://github.com/IMIO
-imio_push = git@github.com:IMIO
+affinitic = git://github.com/affinitic
+affinitic_push = git@github.com:affinitic
 collective = git://github.com/collective
 collective_push = git@github.com:collective
 
 
 [sources]
-# from IMIO
-collective.faceted.taxonomywidget = git ${remotes:imio}/collective.faceted.taxonomywidget.git pushurl=${remotes:imio_push}/collective.faceted.taxonomywidget.git
-library.policy = git ${remotes:imio}/library.policy.git pushurl=${remotes:imio_push}/library.policy.git
-library.theme = git ${remotes:imio}/library.theme.git pushurl=${remotes:imio_push}/library.theme.git
+library.policy = git ${remotes:affinitic}/{settings:package_policy}.git pushurl=${remotes:affinitic_push}/{settings:package_policy}.git
+library.theme = git ${remotes:affinitic}/{settings:package_theme}.git pushurl=${remotes:affinitic_push}/{settings:package_theme}.git
+library.theme = git ${remotes:affinitic}/{settings:package_core}.git pushurl=${remotes:affinitic_push}/{settings:package_core}.git

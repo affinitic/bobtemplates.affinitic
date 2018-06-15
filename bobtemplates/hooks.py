@@ -128,11 +128,15 @@ def cleanup_package(configurator):
 
 
 def post_render(configurator):
-    if configurator.variables['policy.name'] != '':
-        config = ConfigParser.RawConfigParser()
-        path = configurator.target_directory + '/variables.cfg'
-        cfgfile = open(path, 'w')
-        config.add_section('variables')
-        config.set('variables', 'package_policy', configurator.variables['policy.name'])
-        config.write(cfgfile)
-        cfgfile.close()
+    config = ConfigParser.RawConfigParser()
+    config.optionxform = str
+    settings = configurator.target_directory + '/settings.cfg'
+    config.read(settings)
+    config.set('variables', 'package_policy', configurator.variables['policy.name'])
+    config.set('variables', 'package_core', configurator.variables['policy.core'])
+    config.set('variables', 'package_theme', configurator.variables['policy.theme'])
+    with open(settings, 'w') as configfile:
+        config.write(configfile)
+
+    settings = configurator.target_directory + '/base.cfg'
+    config.set('Section1', 'a_float', '3.1415')
