@@ -1,0 +1,10 @@
+[buildout]
+extends =
+    base.cfg
+
+[instance]
+debug-mode = on
+verbose-security = on
+user = admin:admin
+eggs +=
+    ${debug-products:eggs}

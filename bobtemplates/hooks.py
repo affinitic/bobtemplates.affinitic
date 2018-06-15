@@ -3,6 +3,7 @@
 from datetime import date
 import os
 import shutil
+import ConfigParser
 
 
 def pre_url(configurator, question):
@@ -124,3 +125,14 @@ def cleanup_package(configurator):
 
         # move .../src/collective/myaddon to .../src/collective/behavior
         shutil.move(base_path, base_path_nested)
+
+
+def post_render(configurator):
+    if configurator.variables['policy.name'] != '':
+        config = ConfigParser.RawConfigParser()
+        path = configurator.target_directory + '/variables.cfg'
+        cfgfile = open(path, 'w')
+        config.add_section('variables')
+        config.set('variables', 'package_policy', configurator.variables['policy.name'])
+        config.write(cfgfile)
+        cfgfile.close()

@@ -1,0 +1,12 @@
+[remotes]
+imio = git://github.com/IMIO
+imio_push = git@github.com:IMIO
+collective = git://github.com/collective
+collective_push = git@github.com:collective
+
+
+[sources]
+# from IMIO
+collective.faceted.taxonomywidget = git ${remotes:imio}/collective.faceted.taxonomywidget.git pushurl=${remotes:imio_push}/collective.faceted.taxonomywidget.git
+library.policy = git ${remotes:imio}/library.policy.git pushurl=${remotes:imio_push}/library.policy.git
+library.theme = git ${remotes:imio}/library.theme.git pushurl=${remotes:imio_push}/library.theme.git
