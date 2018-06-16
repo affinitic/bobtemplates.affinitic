@@ -132,11 +132,8 @@ def post_render(configurator):
     config.optionxform = str
     settings = configurator.target_directory + '/settings.cfg'
     config.read(settings)
-    config.set('variables', 'package_policy', configurator.variables['policy.name'])
-    config.set('variables', 'package_core', configurator.variables['policy.core'])
-    config.set('variables', 'package_theme', configurator.variables['policy.theme'])
+    config.set('settings', 'package_policy', configurator.variables['policy.name'])
+    config.set('settings', 'package_core', configurator.variables['policy.core'])
+    config.set('settings', 'package_theme', configurator.variables['policy.theme'])
     with open(settings, 'w') as configfile:
         config.write(configfile)
-
-    settings = configurator.target_directory + '/base.cfg'
-    config.set('Section1', 'a_float', '3.1415')
