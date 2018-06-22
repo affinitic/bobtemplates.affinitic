@@ -4,8 +4,8 @@ affinitic_push = git@github.com:affinitic
 collective = git://github.com/collective
 collective_push = git@github.com:collective
 
-
+# TODO: variable substitution for keys ?
 [sources]
-library.policy = git ${remotes:affinitic}/{settings:package_policy}.git pushurl=${remotes:affinitic_push}/{settings:package_policy}.git
-library.theme = git ${remotes:affinitic}/{settings:package_theme}.git pushurl=${remotes:affinitic_push}/{settings:package_theme}.git
-library.theme = git ${remotes:affinitic}/{settings:package_core}.git pushurl=${remotes:affinitic_push}/{settings:package_core}.git
+package_policy = git ${remotes:affinitic}/${settings:package_policy}.git pushurl=${remotes:affinitic_push}/${settings:package_policy}.git
+package_theme = git ${remotes:affinitic}/${settings:package_theme}.git pushurl=${remotes:affinitic_push}/${settings:package_theme}.git
+package_core = git ${remotes:affinitic}/${settings:package_core}.git pushurl=${remotes:affinitic_push}/${settings:package_core}.git

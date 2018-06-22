@@ -2,9 +2,15 @@
 extends =
     base.cfg
 
+auto-checkout =
+
+
 [instance]
 debug-mode = on
 verbose-security = on
 user = admin:admin
 eggs +=
     ${debug-products:eggs}
+
+[debug-products]
+eggs =
