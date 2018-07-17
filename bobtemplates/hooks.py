@@ -137,3 +137,13 @@ def post_render(configurator):
     config.set('settings', 'package_theme', configurator.variables['theme.name'])
     with open(settings, 'w') as configfile:
         config.write(configfile)
+
+    sources = configurator.target_directory + '/sources.cfg'
+
+    file = open(sources, 'rb').read()
+    lines = file.split("\n")
+    result = []
+    for line in lines:
+        var = line.replace('package_policy_source_name', configurator.variables['policy.name']).replace('package_core_source_name', configurator.variables['core.name']).replace('package_theme_source_name', configurator.variables['theme.name'])
+        result.append(var)
+    open(sources, 'wb').write("\n".join(result))
