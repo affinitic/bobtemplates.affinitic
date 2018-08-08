@@ -1,7 +1,7 @@
 [buildout]
 extends =
     settings.cfg
-    https://github.com/affinitic/affinitic.dist/blob/plone5/plone5-base.cfg
+    https://raw.githubusercontent.com/affinitic/affinitic.dist/plone5/plone5-base.cfg
     http://dist.plone.org/release/{{{ plone.version }}}/versions.cfg
     https://raw.githubusercontent.com/affinitic/affinitic.dist/master/plone{{{ plone.version|replace(".", "") }}}.cfg
     sources.cfg
