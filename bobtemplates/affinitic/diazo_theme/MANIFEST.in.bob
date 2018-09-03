@@ -1,3 +1,0 @@
-graft src/{{{ package.namespace }}}
-include *.rst
-global-exclude *.pyc
