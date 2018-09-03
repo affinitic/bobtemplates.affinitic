@@ -11,7 +11,7 @@ theme theme_name
 
 bin/mrbob -O $buildout_name bobtemplates.affinitic:complete_plone5_buildout
 bin/mrbob -O $core_name bobtemplates.plone:addon
-bin/mrbob -O $policy_name bobtemplates.plone:theme_package
-bin/mrbob -O $theme_name bobtemplates.plone:addon
+bin/mrbob -O $policy_name bobtemplates.plone:addon
+bin/mrbob -O $theme_name bobtemplates.affinitic:theme_package
 
 python run.py --policy=$policy_name --core=$core_name --theme=$theme_name
