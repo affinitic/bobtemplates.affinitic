@@ -7,7 +7,28 @@ bobtemplates.affinitic
 Call it from the ``src``-directory of your Plone project like this.::
 
     $ bin/mrbob -O your.package bobtemplates.affinitic:basic_plone_buildout
-    $ bin/mrbob -O your.package bobtemplates.affinitic:diazo_theme
+
+
+Installing a theme package
+==========================
+
+Installation with pip in a virtualenv
+-------------------------------------
+
+You can also install bobtemplates.plone with pip in a virtualenv. If you don't have an active virtualenv, you can create one inside your project directory.
+
+.. code-block:: bash
+
+    virtualenv-2.7 .
+    bin/pip install -r requirements.txt
+    bin/buildout
+    bin/mrbob -O plonetheme.name bobtemplates.affinitic:theme_package
+
+Warning
+-------
+
+Currently, it is not possible to create a 3 part package name.
+The name must be of type: plonetheme.name
 
 
 Credits
