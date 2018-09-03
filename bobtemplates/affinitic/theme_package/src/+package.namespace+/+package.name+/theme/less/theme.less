@@ -2,21 +2,20 @@
 
 // ### PLONE IMPORTS ###
 
-@barceloneta_path: "barceloneta/less";
+@barceloneta_path: "../barceloneta/less";
 
 //*// Core variables and mixins
 @import "@{barceloneta_path}/fonts.plone.less";
 @import "@{barceloneta_path}/variables.plone.less";
-    @import "@{barceloneta_path}/mixin.prefixes.plone.less";
-    @import "@{barceloneta_path}/mixin.tabfocus.plone.less";
-    @import "@{barceloneta_path}/mixin.images.plone.less";
-    @import "@{barceloneta_path}/mixin.forms.plone.less";
-    @import "@{barceloneta_path}/mixin.borderradius.plone.less";
-    @import "@{barceloneta_path}/mixin.buttons.plone.less";
-    @import "@{barceloneta_path}/mixin.clearfix.plone.less";
-    @import "@{barceloneta_path}/mixin.gridframework.plone.less"; //grid Bootstrap
-    @import "@{barceloneta_path}/mixin.grid.plone.less"; //grid Bootstrap
-    @import "@{barceloneta_path}/mixin.font.plone.less";
+@import "@{barceloneta_path}/mixin.prefixes.plone.less";
+@import "@{barceloneta_path}/mixin.tabfocus.plone.less";
+@import "@{barceloneta_path}/mixin.images.plone.less";
+@import "@{barceloneta_path}/mixin.forms.plone.less";
+@import "@{barceloneta_path}/mixin.borderradius.plone.less";
+@import "@{barceloneta_path}/mixin.buttons.plone.less";
+@import "@{barceloneta_path}/mixin.clearfix.plone.less";
+//    @import "@{barceloneta_path}/mixin.gridframework.plone.less"; //grid Bootstrap
+@import "@{barceloneta_path}/mixin.grid.plone.less"; //grid Bootstrap
 
 @import "@{barceloneta_path}/normalize.plone.less";
 @import "@{barceloneta_path}/print.plone.less";
@@ -76,19 +75,9 @@
 // ### UTILS ###
 
 // import bootstrap files:
-@bootstrap_path: "node_modules/bootstrap/less";
+@bootstrap_path: "../node_modules/bootstrap/less";
 
-// Enable as needed
-// @import "@{bootstrap_path}/mixins/grid-framework.less";
-// @import "@{bootstrap_path}/variables.less";
-// @import "@{bootstrap_path}/mixins.less";
-// @import "@{bootstrap_path}/utilities.less";
-// @import "@{bootstrap_path}/grid.less";
-// @import "@{bootstrap_path}/type.less";
-// @import "@{bootstrap_path}/forms.less";
-// @import "@{bootstrap_path}/navs.less";
-// @import "@{bootstrap_path}/navbar.less";
-// @import "@{bootstrap_path}/carousel.less";
+@import "@{bootstrap_path}/bootstrap.less";
 
 // ### END OF UTILS ###
 

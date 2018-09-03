@@ -17,6 +17,12 @@
       name="{{{ theme.normalized_name }}}"
       />
 
+  <plone:static
+      directory="theme/less"
+      type="plone"
+      name="{{{ theme.normalized_name }}}.less"
+      />
+
   <genericsetup:registerProfile
       name="default"
       title="Plone Theme: {{{ theme.name }}}"

@@ -25,5 +25,23 @@
 	      <element>template|+plone+static/components/tinymce-builded/js/tinymce/plugins/template</element>
 	    </value>
 	</record>
+
+    <records prefix="plone.resources/plonetheme.custom"
+        interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="css">
+            <element>++plone++{{{ theme.normalized_name }}}.less/custom.less</element>
+        </value>
+    </records>
+    <records prefix="plone.bundles/plonetheme.custom"
+        interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="resources">
+            <element>plonetheme.custom</element>
+        </value>
+        <value key="merge_with">default</value>
+        <value key="enabled">True</value>
+        <value key="compile">True</value>
+        <value key="csscompilation">++plone++{{{ theme.normalized_name }}}.less/custom-compiled.css</value>
+        <value key="last_compilation">2018-07-13 00:00:00</value>
+    </records>
 {{% endif %}}
 </registry>
