@@ -1,5 +1,5 @@
 [theme]
-title = Plone Theme: {{{ theme.name|capitalize }}}
+title = {{{ theme.normalized_name }}}
 description = A Diazo based Plone theme
 doctype = <!DOCTYPE html>
 rules = /++theme++{{{ theme.normalized_name }}}/rules.xml
