@@ -40,7 +40,7 @@
         <value key="merge_with">default</value>
         <value key="enabled">True</value>
         <value key="compile">True</value>
-        <value key="csscompilation">++plone++{{{ theme.normalized_name }}}.less/custom-compiled.css</value>
+        <value key="csscompilation">++plone++{{{ theme.normalized_name }}}.less/theme-compiled.css</value>
         <value key="last_compilation">2018-07-13 00:00:00</value>
     </records>
 {{% endif %}}
