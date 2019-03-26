@@ -20,24 +20,24 @@ Installation du package
 
 Développer le buildout et ses dépendances.
 
-```sh
-$ make build
-```
+.. code-block:: bash
+
+    $ make build-dev
 
 ou
 
-```sh
-$ virtualenv-2.7 .
-$ bin/pip install -I -r requirements.txt
-$ ln -s dev.cfg buildout.cfg
-$ bin/buildout
-```
+.. code-block:: bash
+
+    $ virtualenv-2.7 .
+    $ bin/pip install -I -r requirements.txt
+    $ ln -s dev.cfg buildout.cfg
+    $ bin/buildout
 
 Lancer l'instance
 
-```sh
-$ bin/instance fg
-```
+.. code-block:: bash
+
+    $ bin/instance fg
 
 
 Installer le package
