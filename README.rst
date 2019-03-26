@@ -4,11 +4,13 @@ Installing bobtemplates.affinitic
 Développer le buildout et ses dépendances.
 
 .. code-block:: bash
+
     $ make build
 
 ou
 
 .. code-block:: bash
+
     $ virtualenv-2.7 .
     $ bin/pip install -I -r requirements.txt
     $ bin/buildout
@@ -16,6 +18,7 @@ ou
 Lancer l'instance
 
 .. code-block:: bash
+
     $ bin/instance fg
 
 
