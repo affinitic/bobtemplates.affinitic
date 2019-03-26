@@ -50,6 +50,9 @@ def prepare_render(configurator):
     # package.dottedname = 'collective.foo.something'
     configurator.variables['package.dottedname'] = dottedname
 
+    # package.slashname = 'collective/foo/something'
+    configurator.variables['package.slashname'] = dottedname.replace('.', '/')
+
     # package.uppercasename = 'COLLECTIVE_FOO_SOMETHING'
     configurator.variables['package.uppercasename'] = configurator.variables[
         'package.dottedname'
@@ -66,6 +69,9 @@ def prepare_render(configurator):
     # package.longname = 'collectivefoosomething'
     configurator.variables['package.longname'] = camelcasename.lower()
 
+    # jenkins.directories = 'collective/foo/something'
+    configurator.variables['jenkins.directories'] = dottedname.replace('.', '/')  # NOQA: E501
+
     # namespace_packages = "['collective', 'collective.foo']"
     if nested:
         namespace_packages = "'{0}', '{0}.{1}'".format(
@@ -75,6 +81,17 @@ def prepare_render(configurator):
         namespace_packages = "'{0}'".format(
             configurator.variables['package.namespace'])
     configurator.variables['package.namespace_packages'] = namespace_packages
+
+    if configurator.variables.get('theme.name'):
+        def normalize_string(value):
+            value = '-'.join(value.split('_'))
+            value = '-'.join(value.split())
+            return value
+        configurator.variables['theme.normalized_name'] = normalize_string(
+            configurator.variables.get('theme.name'),
+        ).lower()
+    else:
+        configurator.variables['theme.normalized_name'] = ''
 
 
 def cleanup_package(configurator):
