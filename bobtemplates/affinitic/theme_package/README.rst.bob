@@ -10,7 +10,7 @@
 Preview
 -------
 
-.. image:: ./src/{{{ package.namespace }}}/{{{ package.name }}}/theme/images/thumb.png
+.. image:: ./src/{{{ package.slashname }}}/theme/images/thumb.png
    :alt: Classic Theme
    :target: http://www.affinitic.be
 
@@ -18,25 +18,16 @@ Preview
 Installation du package
 -----------------------
 
-Développer le buildout et ses dépendances.
-
-.. code-block:: bash
-
+Développer le buildout et ses dépendances::
     $ make build-dev
 
-ou
-
-.. code-block:: bash
-
+ou::
     $ virtualenv-2.7 .
     $ bin/pip install -I -r requirements.txt
     $ ln -s dev.cfg buildout.cfg
     $ bin/buildout
 
-Lancer l'instance
-
-.. code-block:: bash
-
+Lancer l'instance::
     $ bin/instance fg
 
 
@@ -64,7 +55,7 @@ Credits
 
 This package was developed by `Affinitic team <https://github.com/affinitic>`_.
 
-.. image:: ./src/{{{ package.namespace }}}/{{{ package.name }}}/theme/images/affinitic.jpg
+.. image:: ./src/{{{ package.slashname }}}/theme/images/affinitic.jpg
    :alt: Affinitic website
    :target: http://www.affinitic.be
 
