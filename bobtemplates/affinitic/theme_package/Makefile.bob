@@ -4,11 +4,7 @@
 #
 #!/usr/bin/make
 #
-build-dev:
-	virtualenv-2.7 .
-	bin/pip install -I -r requirements.txt
-	ln -s dev.cfg buildout.cfg
-	bin/buildout
+#
 
 grunt-dev:
 	npm init
@@ -16,3 +12,16 @@ grunt-dev:
 	npm install autoprefixer
 	npm install grunt-browser-sync grunt-contrib-watch grunt-contrib-less grunt-postcss
 	grunt compile
+
+build-dev:
+	virtualenv-2.7 .
+	ln -f -s dev.cfg buildout.cfg
+	bin/pip install -I -r requirements.txt
+	bin/buildout
+	make grunt-dev
+
+build-prod:
+	virtualenv-2.7 .
+	ln -f -s prod.cfg buildout.cfg
+	bin/pip install -I -r requirements.txt
+	bin/buildout
